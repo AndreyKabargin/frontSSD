@@ -5,7 +5,7 @@ let object = {
     shift: '',
     operator: '',
     order: '',
-    stage: '',
+    stage: '', 
     stamp: '',
     carton: '',
     pressrun: '',
