@@ -1,0 +1,149 @@
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+    margin: 0px;
+    background-color: #1c2331;
+    color: whitesmoke;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.header-col {
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 20px;
+}
+
+.header-text {
+    color: chartreuse;
+    max-width: 300px;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header,
+.header-col,
+.header-row,
+.header-name,
+.header-text {
+    border: none;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 0px;
+}
+
+.menu-btn {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    background-color: #3f729b;
+    border-radius: 5px;
+    margin: 0px 5px 5px 0px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.menu-btn-selected {
+    background-color: #1c2331;
+}
+
+.page-main,
+.page-team,
+.page-label,
+.page-production {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 0px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn-events,
+.btn-team,
+.provision-btn,
+.expense-btn,
+.release-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn {
+    display: flex;
+    height: 65px;
+    width: 65px;
+    background-color: #3f729b;
+    font-size: x-small;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    background-color: #1c2331;
+}
+
+.hidden {
+    display: none;
+}
+
+table,
+tr,
+th,
+td {
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+    height: 20px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.row-selected {
+    color: #1c2331;
+    background-color: whitesmoke;
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARM</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body class="noselect">
+
+    <header>
+
+        <table class="header-col">
+            <tr class="header-row">
+                <td class="header-name">Рабочий центр:</td>
+                <td class="header-text" id="workCenter"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Смена:</td>
+                <td class="header-text" id="shift"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Оператор:</td>
+                <td class="header-text" id="operator"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Заказ:</td>
+                <td class="header-text" id="order"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Этап:</td>
+                <td class="header-text" id="stage"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Штамп:</td>
+                <td class="header-text" id="stamp"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Картон:</td>
+                <td class="header-text" id="carton"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Тираж:</td>
+                <td class="header-text" id="pressrun"></td>
+            </tr>
+        </table>
+
+        <table class="header-col">
+            <tr class="header-row">
+                <td class="header-name">Количество на входе:</td>
+                <td class="header-text" id="countEnter"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Количество на выходе:</td>
+                <td class="header-text" id="countExit"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Сделано ранее:</td>
+                <td class="header-text" id="earlyProd"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Машинная скорость:</td>
+                <td class="header-text" id="speed"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Количество по счетчику:</td>
+                <td class="header-text" id="counter"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Выработка план:</td>
+                <td class="header-text" id="plan"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Выработка факт:</td>
+                <td class="header-text" id="fact"></td>
+            </tr>
+            <tr class="header-row">
+                <td class="header-name">Эффективность:</td>
+                <td class="header-text" id="eff"></td>
+            </tr>
+        </table>
+
+    </header>
+
+    <nav class='menu'>
+        <button class="menu-btn menu-btn-selected" id="menu-btn-main">Основная</button>
+        <button class="menu-btn" id="menu-btn-team">Бригада</button>
+        <button class="menu-btn" id="menu-btn-label">Паллетные ярлыки</button>
+        <button class="menu-btn" id="menu-btn-production">Производство</button>
+    </nav>
+
+    <div class="page-main">
+
+        <div class="btn-events">
+            <button class="btn">Начать работу</button>
+            <button class="btn">Завершить работу</button>
+            <button class="btn">Начать этап</button>
+            <button class="btn">Завершить этап</button>
+            <button class="btn">Причины снижения выработки</button>
+            <button class="btn">Печать</button>
+            <button class="btn">Тех. описание</button>
+            <button class="btn">Тех. неиспр-сть</button>
+            <button class="btn">Начать приладку</button>
+            <button class="btn">Начать переход внутри серий</button>
+            <button class="btn" id="events-btn-up">Вверх</button>
+            <button class="btn" id="events-btn-down">Вниз</button>
+            <button class="btn">Изменить статус</button>
+            <button class="btn">Создать статус</button>
+            <button class="btn">Разбить статус</button>
+            <button class="btn">Скрыть микро-ки</button>
+            <button class="btn">Объяснить остановки</button>
+        </div>
+
+        <table id="table-events">
+            <tr>
+                <th>
+                    ИД
+                </th>
+                <th>
+                    Этап
+                </th>
+                <th>
+                    Операция
+                </th>
+                <th>
+                    Статус
+                </th>
+                <th>
+                    Количество
+                </th>
+                <th>
+                    Начало
+                </th>
+                <th>
+                    Длительность
+                </th>
+                <th>
+                    Окончание
+                </th>
+            </tr>
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.writeln("<tr class=" + (i == 0 ? "'row row-selected'" : "row") + "><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>");
+                }
+            </script>
+        </table>
+
+    </div>
+
+    <div class="page-team hidden">
+        <div class="btn-team">
+            <button class="btn">Добавить</button>
+            <button class="btn">Удалить</button>
+            <button class="btn">Вверх</button>
+            <button class="btn">Вниз</button>
+        </div>
+
+        <table id="table-team">
+            <tr>
+                <th>
+                    ИД
+                </th>
+                <th>
+                    Сотрудник
+                </th>
+                <th>
+                    Начало
+                </th>
+                <th>
+                    Длительность
+                </th>
+                <th>
+                    Окончание
+                </th>
+            </tr>
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.writeln("<tr class=" + (i == 0 ? "'row row-selected'" : "row") + "><td></td><td></td><td></td><td></td><td></td></tr>");
+                }
+            </script>
+        </table>
+    </div>
+
+    <div class="page-label hidden">
+        Паллетные ярлыки
+    </div>
+
+    <div class="page-production hidden">
+        <div class="provision-btn">
+            <button class="btn">Добавить</button>
+            <button class="btn">Вверх</button>
+            <button class="btn">Вниз</button>
+        </div>
+
+        <table class="provision-table">
+            <tr>
+                <th>
+                    Номенклатура
+                </th>
+                <th>
+                    Серия
+                </th>
+                <th>
+                    Количество, ед.изм.
+                </th>
+            </tr>
+            <script>
+                for (let i = 0; i < 3; i++) {
+                    document.writeln("<tr><td></td><td></td><td></td></tr>");
+                }
+            </script>
+        </table>
+
+        <div class="expense-btn">
+            <button class="btn">Ввести остаток</button>
+            <button class="btn">Печать остаток</button>
+            <button class="btn">Удалить</button>
+            <button class="btn">Вверх</button>
+            <button class="btn">Вниз</button>
+        </div>
+
+        <table class="expense-table">
+            <tr>
+                <th>
+                    Номенклатура
+                </th>
+                <th>
+                    Серия
+                </th>
+                <th>
+                    Обеспечение, ед.изм.
+                </th>
+                <th>
+                    Расход, ед.изм.
+                </th>
+                <th>
+                    Остаток, ед.изм.
+                </th>
+            </tr>
+            <script>
+                for (let i = 0; i < 3; i++) {
+                    document.writeln("<tr><td></td><td></td><td></td><td></td><td></td></tr>");
+                }
+            </script>
+        </table>
+
+        <div class="release-btn">
+            <button class="btn">Добавить выпуск</button>
+            <button class="btn">Удалить выпуск</button>
+            <button class="btn">Печать выпуск</button>
+            <button class="btn">Вверх</button>
+            <button class="btn">Вниз</button>
+        </div>
+
+        <table class="release-table">
+            <tr>
+                <th>
+                    Номенклатура
+                </th>
+                <th>
+                    Серия
+                </th>
+                <th>
+                    Количество, ед.изм.
+                </th>
+            </tr>
+            <script>
+                for (let i = 0; i < 3; i++) {
+                    document.writeln("<tr><td></td><td></td><td></td></tr>");
+                }
+            </script>
+        </table>
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
