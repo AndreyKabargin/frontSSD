@@ -56,38 +56,15 @@ let elements = {
 
 }
 
-/*function getObject() {
-
-    let parameters = {
-        workCenter: 1,
-    };
-
-    fetch('http://localhost/SSD_Postgres/hs/Web/API/', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            //'Authentication': 'Basic T2JtZW46T2JtZW4=',
-            'operation': 'getAllDataWorkCenter',
-            'parameters': JSON.stringify(parameters),
-        },
-    }).then(res => res.json()
-    ).then(json => refreshForm(json));
-
-}*/
-
 function getObject() {
 
-    let parameters = {
-        workCenter: 1,
-    };
+    let workCenter = 1;
 
-    fetch('http://localhost/SSD_Postgres/hs/SSD/GetData?WorkCenter=1', {
+    fetch('http://localhost:3000/SSD_Postgres/hs/SSD/API/GetData/' + workCenter, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
-            //'Authentication': 'Basic T2JtZW46T2JtZW4=',
-            'operation': 'getAllDataWorkCenter',
-            'parameters': JSON.stringify(parameters),
+            'Authorization': 'Basic T2JtZW46T2JtZW4=',
         },
     }).then(res => res.json()
     ).then(json => refreshForm(json));
